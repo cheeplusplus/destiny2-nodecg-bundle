@@ -1,4 +1,7 @@
 import * as _ from "lodash";
+import * as fs from "fs-extra";
+import * as path from "path";
+import * as moment from "moment";
 import {
     CharacterItem,
     GetProfileCompositeResponse,
@@ -19,12 +22,9 @@ import {
 } from "../../shared-src/types";
 import { Destiny2Manifest } from "./manifest";
 import { Destiny2Api } from "./api";
-import * as fs from "fs-extra";
-import * as path from "path";
 import { CharacterListItem } from "../../shared-src/replicants";
 import { NodeCG } from "../../../../types/server";
-import * as moment from "moment";
-import { BundleConfig } from "..";
+import { BundleConfig } from "../components/shared";
 
 const API_UPDATE_THRESHHOLD = 30; // 30 seconds
 
@@ -76,10 +76,11 @@ export class GameData {
                 .subtract(API_UPDATE_THRESHHOLD, "seconds")
                 .diff(this.lastLoaded) <= 0
         ) {
-            this.log.debug("Load canceled, not enough time has passed");
+            this.log.info("Load canceled, not enough time has passed");
             return;
         }
 
+        this.log.info("Loading new profile data");
         this.loadStarted = true;
 
         try {

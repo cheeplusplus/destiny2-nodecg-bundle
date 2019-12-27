@@ -15,7 +15,10 @@ export default function GameDataPanel({ replicants, ...props }: Props) {
 
     const updateApi = () => {
         nodecg.log.info(`Asking extension for an API update`);
-        nodecg.sendMessageToBundle("updateServerData", "destiny2", "please");
+        nodecg.sendMessageToBundle(
+            "updateServerData",
+            "destiny2-nodecg-bundle"
+        );
     };
 
     if (!timestamp) {

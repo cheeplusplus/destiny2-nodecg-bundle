@@ -1,4 +1,6 @@
 import * as _ from "lodash";
+import * as path from "path";
+import * as sqlite from "sqlite";
 import {
     InventoryItem,
     Activity,
@@ -6,8 +8,6 @@ import {
     Place,
     ActivityMode
 } from "../../shared-src/types";
-import * as path from "path";
-import * as sqlite from "sqlite";
 
 interface DestinyDbStruct {
     id: string;
