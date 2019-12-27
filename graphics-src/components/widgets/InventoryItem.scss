@@ -9,12 +9,22 @@
         font-size: 0.7em;
         background-color: grey;
         padding: shared.$small-margin;
+
+        .perkName {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .perkDescription {
+            margin-top: shared.$small-margin;
+        }
     }
 
     img.imageframe {
-            border-style: solid;
-            border-width: 4px;
-            border-color: white;
+        border-style: solid;
+        border-width: 4px;
+        border-color: white;
 
         &.masterworked {
             border-color: #eade8b;

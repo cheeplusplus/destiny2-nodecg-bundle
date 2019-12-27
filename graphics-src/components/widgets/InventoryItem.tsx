@@ -33,13 +33,7 @@ export default function InventoryItem({ item, ...props }: Props) {
             {tierType === ItemTier.Exotic && exoticPerk && (
                 <div className="perk">
                     <TextFit mode="single" max={32}>
-                        <div
-                            style={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center"
-                            }}
-                        >
+                        <div className="perkName">
                             <BungieApiImage
                                 path={exoticPerk.icon}
                                 width={48}
@@ -49,8 +43,9 @@ export default function InventoryItem({ item, ...props }: Props) {
                             {exoticPerk.name}
                         </div>
                     </TextFit>
-                    <br />
-                    <TextFit>{exoticPerk.description}</TextFit>
+                    <TextFit className="perkDescription">
+                        {exoticPerk.description}
+                    </TextFit>
                 </div>
             )}
         </div>
