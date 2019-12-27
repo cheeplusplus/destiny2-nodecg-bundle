@@ -1,33 +1,33 @@
 @use '../../shared.scss';
 
 .videoBlock {
-	background-color: black;
-	position: absolute;
-	top: shared.$outer-margin;
-	right: shared.$outer-margin;
-	width: shared.$video-width;
-	height: shared.$video-height;
-	color: white;
+    background-color: black;
+    position: absolute;
+    top: shared.$outer-margin;
+    right: shared.$outer-margin;
+    width: shared.$video-width;
+    height: shared.$video-height;
+    color: white;
 
-	.videoBoxDetails {
-		margin: 16px;
+    .videoBoxDetails {
+        margin: 16px;
 
-		.videoWidth::after {
-			content: "#{shared.$video-width}";
-		}
-		.videoHeight::after {
-			content: "#{shared.$video-height}";
-		}
-		.videoLeft::after {
-			content: "#{shared.$master-width - shared.$outer-margin - shared.$video-width}"; // ?
-		}
-		.videoTop::after {
-			content: "#{shared.$outer-margin}";
-		}
-	}
+        .videoWidth::after {
+            content: "#{shared.$video-width}";
+        }
+        .videoHeight::after {
+            content: "#{shared.$video-height}";
+        }
+        .videoLeft::after {
+            content: "#{shared.$master-width - shared.$outer-margin - shared.$video-width}"; // ?
+        }
+        .videoTop::after {
+            content: "#{shared.$outer-margin}";
+        }
+    }
 }
 
 .bottomBlock {
-	bottom: 0;
-	left: shared.hgrid(3);
+    bottom: 0;
+    left: shared.hgrid(3);
 }

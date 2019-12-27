@@ -22,33 +22,33 @@ $video-height: $video-width * (9/16);
 // page content
 
 body {
-	width: $master-width;
-	height: $master-height;
-	padding: 0;
-	margin: 0;
-	font-family: "Destiny";
-	font-size: 1rem;
-	font-weight: 400;
-	-webkit-font-smoothing: antialiased;
-	overflow: hidden;
+    width: $master-width;
+    height: $master-height;
+    padding: 0;
+    margin: 0;
+    font-family: "Destiny";
+    font-size: 1rem;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
 
-	background: linear-gradient(-45deg, #7c2729, #3a6b64, #4aa0a4, #7c2729);
-	background-size: 150% 150%;
-	animation: gradientBG 15s ease infinite;
+    background: linear-gradient(-45deg, #7c2729, #3a6b64, #4aa0a4, #7c2729);
+    background-size: 150% 150%;
+    animation: gradientBG 15s ease infinite;
 }
 
 // from https://codepen.io/P1N2O/pen/pyBNzX
 
 @keyframes gradientBG {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 // misc styles

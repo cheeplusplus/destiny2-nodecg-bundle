@@ -28,10 +28,10 @@ export default function BottomBlock({
             line1 = "In Orbit";
         } else {
             /* Playing Tower (Social)
-			   The Last City on Earth
+               The Last City on Earth
 
-			   Playing Endless Vale (Iron Banner Control): Iron Banner
-			   on The Crucible 
+               Playing Endless Vale (Iron Banner Control): Iron Banner
+               on The Crucible 
 
             let modeLine = "";
             if (activity.mode) {
@@ -45,7 +45,7 @@ export default function BottomBlock({
             line1 = `Playing ${guardianData.activity.name ||
                 "?"}${modeLine}${playlistLine}`;
             line2 = `${guardianData.activity.destination ||
-				""} on ${activity.place || "unknown"}`;*/
+                ""} on ${activity.place || "unknown"}`;*/
 
             /* New mode
                Name / Playlist (Mode[subst out playlist from mode])
@@ -55,8 +55,8 @@ export default function BottomBlock({
                The Last City / Earth
 
                Endless Vale: Iron Banner (Control)
-			   The Crucible
-			*/
+               The Crucible
+            */
 
             line1 = `${activity.name}`;
             if (activity.playlist) {

@@ -4,46 +4,46 @@ import { replicate } from "../stores/NodecgStore";
 import { DefinedReplicants } from "../replicants";
 
 export interface NodeCgComponentChildProps {
-	replicants: Readonly<DefinedReplicants>;
+    replicants: Readonly<DefinedReplicants>;
 }
 
 interface Props {
-	component:
-		| React.ComponentClass<NodeCgComponentChildProps>
-		| React.FunctionComponent<NodeCgComponentChildProps>;
-	replicantNames: (keyof DefinedReplicants)[];
+    component:
+        | React.ComponentClass<NodeCgComponentChildProps>
+        | React.FunctionComponent<NodeCgComponentChildProps>;
+    replicantNames: (keyof DefinedReplicants)[];
 }
 
 interface State {
-	replicants: DefinedReplicants;
+    replicants: DefinedReplicants;
 }
 
 export class NodeCgBase extends React.Component<Props, State> {
-	constructor(props: Props) {
-		super(props);
+    constructor(props: Props) {
+        super(props);
 
-		this.state = {
-			replicants: NCGStore.getReplicants()
-		};
-	}
+        this.state = {
+            replicants: NCGStore.getReplicants()
+        };
+    }
 
-	componentDidMount() {
-		// Subscribing to replicant changes
-		for (const rn of this.props.replicantNames) {
-			replicate(rn);
-		}
+    componentDidMount() {
+        // Subscribing to replicant changes
+        for (const rn of this.props.replicantNames) {
+            replicate(rn);
+        }
 
-		// We keep all our subscribed replicants in a single "replicants" object
-		NCGStore.on("change", () => {
-			this.setState({
-				replicants: NCGStore.getReplicants()
-			});
-		});
-	}
+        // We keep all our subscribed replicants in a single "replicants" object
+        NCGStore.on("change", () => {
+            this.setState({
+                replicants: NCGStore.getReplicants()
+            });
+        });
+    }
 
-	render() {
-		return React.createElement(this.props.component, {
-			replicants: this.state.replicants
-		});
-	}
+    render() {
+        return React.createElement(this.props.component, {
+            replicants: this.state.replicants
+        });
+    }
 }
