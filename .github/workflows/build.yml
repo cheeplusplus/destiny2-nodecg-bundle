@@ -7,14 +7,31 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - uses: actions/checkout@v1
-
             - name: Setup Node.js for use with actions
               uses: actions/setup-node@v1.1.0
               with:
                   version: 12.x
 
-            - name: Install NPM packages
-              run: npm install
-            - name: Build
+            - name: Checkout nodecg v1.5.0
+              uses: actions/checkout@v2
+              with:
+                  repository: nodecg/nodecg
+                  ref: v1.5.0
+                  path: nodecg
+
+            - name: Install nodecg NPM packages
+              working-directory: ${{ github.workspace }}/nodecg
+              run: npm ci
+
+            - name: Checkout project
+              uses: actions/checkout@v2
+              with:
+                  path: nodecg/bundles/destiny2-nodecg-bundle
+
+            - name: Install project NPM packages
+              working-directory: ${{ github.workspace }}/nodecg/bundles/destiny2-nodecg-bundle
+              run: npm ci
+
+            - name: Build project
+              working-directory: ${{ github.workspace }}/nodecg/bundles/destiny2-nodecg-bundle
               run: npm run build
