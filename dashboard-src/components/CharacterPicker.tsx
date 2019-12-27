@@ -32,9 +32,14 @@ export default function CharacterPicker({
     const handleOnClick = (
         e: React.MouseEvent<HTMLButtonElement, MouseEvent>
     ) => {
-        if (characterId) {
-            nodecg.log.info(`Updating character ID to ${characterId}`);
-            nodeCGStore.setValue("characterId", characterId);
+        let useCharacterId = characterId;
+        if (characterList.map(m => m.characterId).indexOf(characterId) < 0) {
+            useCharacterId = characterList[0].characterId;
+        }
+
+        if (useCharacterId) {
+            nodecg.log.info(`Updating character ID to ${useCharacterId}`);
+            nodeCGStore.setValue("characterId", useCharacterId);
         } else {
             nodecg.log.warn("Could not find a character ID to update to");
         }
