@@ -1,0 +1,49 @@
+@use '../../shared.scss';
+@use '../sidebar/SidebarBlock.scss';
+
+$banner-height: 146px;
+$emblem-width: 96px;
+
+.bottomBlock {
+    position: absolute;
+    width: shared.hgrid(shared.$h-grid-height - SidebarBlock.$sidebar-size);
+    height: $banner-height;
+
+    .streamTitle {
+        position: absolute;
+        bottom: 0;
+        left: $emblem-width * 1.5;
+        color: white;
+
+        margin-top: shared.$outer-margin;
+        margin-left: shared.$small-margin;
+        margin-right: shared.$outer-margin;
+        margin-bottom: shared.$outer-margin;
+    }
+
+    .currentActivity {
+        position: absolute;
+        // bottom: 0;
+        top: 0; // can't decide which is better
+        right: 0;
+        color: white;
+        text-align: right;
+        font-size: 1.5em;
+
+        margin-top: shared.$outer-margin;
+        margin-left: shared.$small-margin;
+        margin-right: shared.$outer-margin;
+        margin-bottom: shared.$outer-margin;
+    }
+
+    .emblem {
+        position: absolute;
+        top: $emblem-width / 3;
+        left: $emblem-width / 3;
+    }
+
+    .banner {
+        position: absolute;
+        bottom: 0;
+    }
+}

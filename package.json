@@ -1,0 +1,110 @@
+{
+  "name": "destiny2-nodecg-bundle",
+  "version": "0.1.0",
+  "description": "Destiny 2 NodeCG bundle",
+  "homepage": "https://github.com/cheeplusplus/destiny2-nodecg-bundle",
+  "repository": "https://github.com/cheeplusplus/destiny2-nodecg-bundle.git",
+  "license": "MIT",
+  "author": {
+    "name": "Kauko",
+    "email": "kauko@biosynth.link"
+  },
+  "scripts": {
+    "start": "echo \"Go start nodecg, silly!\"",
+    "build": "npm-run-all clean build:*",
+    "build:graphics": "parcel build graphics-src/*.html -d graphics --public-url ./",
+    "build:dashboard": "parcel build dashboard-src/*.html -d dashboard --public-url ./",
+    "build:extension": "tsc -p tsconfig.extension.json",
+    "watch:graphics": "parcel watch graphics-src/*.html -d graphics --public-url ./",
+    "watch:dashboard": "parcel watch dashboard-src/*.html -d dashboard --public-url ./",
+    "watch:extension": "tsc --watch -p tsconfig.extension.json",
+    "clean": "npm-run-all clean:*",
+    "clean:graphics": "rm -rf ./graphics/",
+    "clean:dashboard": "rm -rf ./dashboard/",
+    "clean:extension": "rm -rf ./extension-build/",
+    "update-manifests": "node d2data/fetch.js"
+  },
+  "nodecg": {
+    "compatibleRange": "^1.1.1",
+    "dashboardPanels": [
+      {
+        "name": "gamedata",
+        "title": "Destiny 2 Game Data",
+        "width": 2,
+        "file": "gamedata.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "sidebar",
+        "title": "Destiny 2 Sidebar",
+        "width": 2,
+        "file": "sidebar.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "bottombar",
+        "title": "Destiny 2 Bottom Bar",
+        "width": 2,
+        "file": "bottombar.html",
+        "headerColor": "#525F78"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "index.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
+        "file": "sidebar.html",
+        "width": 360,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
+        "file": "bottom.html",
+        "width": 1560,
+        "height": 146,
+        "singleInstance": false
+      }
+    ]
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ],
+  "dependencies": {
+    "events": "^3.0.0",
+    "fs-extra": "^8.1.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-pose": "^4.0.10",
+    "react-textfit": "^1.1.0",
+    "source-map-support": "^0.5.16",
+    "sqlite": "^3.0.3",
+    "superagent": "^5.1.3"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^8.0.1",
+    "@types/lodash": "^4.14.149",
+    "@types/moment": "^2.13.0",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@types/sass": "^1.16.0",
+    "@types/source-map-support": "^0.5.0",
+    "@types/superagent": "^4.1.4",
+    "@types/unzipper": "^0.10.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^1.19.1",
+    "sass": "^1.24.0",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.4",
+    "unzipper": "^0.10.5"
+  }
+}

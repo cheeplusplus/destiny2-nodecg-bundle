@@ -1,0 +1,83 @@
+// master dimensions
+$master-width: 1920px;
+$master-height: 1080px;
+$outer-margin: 16px;
+$small-margin: $outer-margin / 2;
+
+$h-grid-height: 16;
+$v-grid-height: 5;
+
+@function hgrid($count) {
+    @return $master-width * ($count / $h-grid-height);
+}
+@function vgrid($count) {
+    @return $master-height * ($count / $v-grid-height);
+}
+
+// video dimensions
+$video-scale: 12.8 / $h-grid-height; // TODO: manually jab this instead of grid-aligning
+$video-width: 1920px * $video-scale;
+$video-height: $video-width * (9/16);
+
+// page content
+
+body {
+	width: $master-width;
+	height: $master-height;
+	padding: 0;
+	margin: 0;
+	font-family: "Destiny";
+	font-size: 1rem;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	overflow: hidden;
+
+	background: linear-gradient(-45deg, #7c2729, #3a6b64, #4aa0a4, #7c2729);
+	background-size: 150% 150%;
+	animation: gradientBG 15s ease infinite;
+}
+
+// from https://codepen.io/P1N2O/pen/pyBNzX
+
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+// misc styles
+
+.centered {
+    width: 100%;
+    text-align: center;
+}
+
+.d2-header {
+    font-family: "DestinyBold";
+    text-transform: uppercase;
+    letter-spacing: -1;
+
+    &.bigHeader {
+        font-size: 4em;
+    }
+}
+
+.smallTitle {
+    font-family: "DestinyBold";
+    text-transform: uppercase;
+    font-size: 2em;
+    margin-bottom: $outer-margin * 2;
+}
+
+.smallTitleTight {
+    font-family: "DestinyBold";
+    text-transform: uppercase;
+    font-size: 2em;
+    margin-bottom: $small-margin;
+}

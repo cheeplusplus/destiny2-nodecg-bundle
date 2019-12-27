@@ -1,0 +1,27 @@
+@use '../../shared.scss';
+
+$sidebar-size: 3;
+
+.sidebarBlock {
+    background-color: #aaaaaaaa;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: shared.hgrid($sidebar-size);
+    height: 100%;
+
+    .contents {
+        margin-top: shared.$outer-margin;
+        margin-left: shared.$outer-margin;
+        margin-bottom: shared.$outer-margin;
+        margin-right: shared.$outer-margin;
+    }
+
+    .largeText {
+        font-size: 4em;
+    }
+
+    .lessLargeText {
+        font-size: 2em;
+    }
+}

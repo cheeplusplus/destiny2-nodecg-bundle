@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "properties": {
+        "apiKey": {
+            "description": "Bungie.net API key",
+            "type": "string"
+        },
+        "apiMembershipType": {
+            "description": "Bungie.net user membership type",
+            "type": "string"
+        },
+        "apiMembershipId": {
+            "description": "Bungie.net user membership ID",
+            "type": "string"
+        },
+        "debugApi": {
+            "description": "Debug the API using a local JSON file",
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "apiKey",
+        "apiMembershipType",
+        "apiMembershipId"
+    ]
+}

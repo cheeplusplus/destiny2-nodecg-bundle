@@ -1,0 +1,9 @@
+@font-face {
+	font-family: "Destiny";
+	src: url("../fonts/NeueHaasDisplay-Roman.woff") format("woff");
+}
+
+@font-face {
+	font-family: "DestinyBold";
+	src: url("../fonts/NeueHaasDisplay-Bold.woff") format("woff");
+}
