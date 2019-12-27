@@ -22,42 +22,13 @@ export default function BottomBlock({
         return <div>Loading...</div>;
     }
 
-    let line1: string, line2: string;
+    let line1 = "";
+    let line2 = "";
     if (activity) {
         if (activity.place === "Orbit") {
+            // Orbit basically only has a Place defined and it messes everything up
             line1 = "In Orbit";
         } else {
-            /* Playing Tower (Social)
-               The Last City on Earth
-
-               Playing Endless Vale (Iron Banner Control): Iron Banner
-               on The Crucible 
-
-            let modeLine = "";
-            if (activity.mode) {
-                modeLine = ` (${activity.mode})`;
-            }
-            let playlistLine = "";
-            if (activity.playlist) {
-                playlistLine = `: ${activity.playlist}`;
-            }
-
-            line1 = `Playing ${guardianData.activity.name ||
-                "?"}${modeLine}${playlistLine}`;
-            line2 = `${guardianData.activity.destination ||
-                ""} on ${activity.place || "unknown"}`;*/
-
-            /* New mode
-               Name / Playlist (Mode[subst out playlist from mode])
-               Playlist / Destination / Place
-
-               Tower (Social)
-               The Last City / Earth
-
-               Endless Vale: Iron Banner (Control)
-               The Crucible
-            */
-
             line1 = `${activity.name}`;
             if (activity.playlist) {
                 line1 += `: ${activity.playlist}`;
@@ -71,7 +42,7 @@ export default function BottomBlock({
             }
 
             if (activity.destination) {
-                line2 += `${activity.destination} `;
+                line2 += `${activity.destination}, `;
             }
             if (activity.place) {
                 line2 += activity.place;
